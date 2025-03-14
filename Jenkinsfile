@@ -24,6 +24,7 @@ pipeline {
             steps {
                 script {
                     echo 'Deploying the application...'
+                    sh 'exit 1'  // *Intentional error: This forces the stage to fail*
                 }
             }
         }
@@ -37,7 +38,7 @@ pipeline {
             echo 'Pipeline executed successfully!'
         }
         failure {
-            echo 'Pipeline failed at some stage!'
+            echo '❌ Pipeline failed at some stage!'
         }
     }
 }
